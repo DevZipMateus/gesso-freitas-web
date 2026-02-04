@@ -1,7 +1,6 @@
 import { ArrowRight, Phone, CheckCircle, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { HeroCarousel } from "@/components/HeroCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const highlights = [
@@ -104,9 +103,20 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Carousel */}
+          {/* Right Video */}
           <div className="hidden lg:flex justify-center items-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <HeroCarousel />
+            <div className="relative w-full max-w-md">
+              <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-xl" />
+              <video
+                src="/midia_13.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="relative w-full h-auto rounded-xl shadow-2xl object-cover"
+                style={{ maxHeight: "500px" }}
+              />
+            </div>
           </div>
         </div>
       </div>

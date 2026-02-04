@@ -7,7 +7,7 @@ import {
   LayoutGrid
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import { HeroCarousel } from "@/components/HeroCarousel";
 const services = [
   {
     icon: Layers,
@@ -64,6 +64,11 @@ export function Services() {
             Oferecemos soluções completas em gesso e drywall, com qualidade e 
             profissionalismo para transformar qualquer ambiente.
           </p>
+        </div>
+
+        {/* Carousel Section */}
+        <div className="flex justify-center mb-16">
+          <HeroCarousel />
         </div>
 
         {/* Services Grid */}
