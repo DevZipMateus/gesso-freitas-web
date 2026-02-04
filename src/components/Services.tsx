@@ -51,7 +51,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicos" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="servicos" className="py-12 sm:py-16 md:py-20 lg:py-28 relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -59,50 +59,50 @@ export function Services() {
       >
         <div className="absolute inset-0 bg-muted/95" />
       </div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             O que fazemos
           </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-2 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2 mb-3 sm:mb-4">
             Nossos serviços
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6" />
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">
             Oferecemos soluções completas em gesso e drywall, com qualidade e 
             profissionalismo para transformar qualquer ambiente.
           </p>
         </div>
 
         {/* Carousel Section */}
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-10 sm:mb-12 md:mb-16 px-4">
           <HeroCarousel />
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-background p-8 rounded-2xl border border-border shadow-custom-sm hover:shadow-custom-md transition-all duration-300 group"
+              className="bg-background p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-border shadow-custom-sm hover:shadow-custom-md transition-all duration-300 group"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               
-              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
+              <h3 className="font-heading font-semibold text-base sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3">
                 {service.title}
               </h3>
               
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-4 sm:mb-6 leading-relaxed">
                 {service.description}
               </p>
               
-              <ul className="space-y-2">
+              <ul className="space-y-1.5 sm:space-y-2">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -112,13 +112,13 @@ export function Services() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-10 sm:mt-12 md:mt-16">
           <a
             href="https://wa.me/5519991071280"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button size="lg" className="gap-2 shadow-primary">
+            <Button size="lg" className="gap-2 shadow-primary text-sm sm:text-base">
               Solicitar orçamento gratuito
             </Button>
           </a>

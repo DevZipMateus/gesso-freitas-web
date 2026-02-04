@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center pt-20"
+      className="relative min-h-screen flex items-center pt-20 pb-12 lg:pb-0"
     >
       {/* Background Image */}
       <div 
@@ -32,80 +32,81 @@ export function Hero() {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/90 to-secondary/80 lg:to-secondary/70" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Content */}
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-4 py-2 rounded-full mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-6 animate-fade-in">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-sm font-medium">Especialistas em gesso e drywall</span>
+              <span className="text-xs sm:text-sm font-medium">Especialistas em gesso e drywall</span>
             </div>
 
             {/* Main Heading - H1 */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-heading font-bold text-secondary-foreground mb-4 sm:mb-6 animate-fade-in leading-tight" style={{ animationDelay: "0.1s" }}>
               Gesso Freitas Campinas
             </h1>
 
             {/* Subheading - H2 */}
-            <h2 className="text-xl md:text-2xl text-secondary-foreground/80 mb-8 font-light leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-secondary-foreground/80 mb-6 sm:mb-8 font-light leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
               Transformamos ambientes com qualidade, precisão e acabamento impecável. 
               Soluções completas em gesso e drywall para projetos residenciais, comerciais e industriais.
             </h2>
 
             {/* Highlights */}
-            <div className="flex flex-wrap gap-4 mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 text-secondary-foreground/90"
+                  className="flex items-center justify-center lg:justify-start gap-2 text-secondary-foreground/90"
                 >
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm md:text-base">{item}</span>
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+                  <span className="text-xs sm:text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in justify-center lg:justify-start" style={{ animationDelay: "0.4s" }}>
               <a
                 href="https://wa.me/5519991071280"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
-                <Button size="lg" className="gap-2 text-base shadow-primary">
-                  <Phone className="w-5 h-5" />
+                <Button size="lg" className="gap-2 text-sm sm:text-base shadow-primary w-full sm:w-auto">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   Solicitar orçamento
                 </Button>
               </a>
-              <Link to="/vitrine">
+              <Link to="/vitrine" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="gap-2 text-base border-white/50 text-white bg-white/10 hover:bg-primary hover:text-white hover:border-primary"
+                  className="gap-2 text-sm sm:text-base border-white/50 text-white bg-white/10 hover:bg-primary hover:text-white hover:border-primary w-full sm:w-auto"
                 >
-                  <ShoppingBag className="w-5 h-5" />
+                  <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                   Ver vitrine
                 </Button>
               </Link>
               <Button
                 variant="ghost"
                 size="lg"
-                className="gap-2 text-base text-white/80 hover:text-white hover:bg-white/10"
+                className="gap-2 text-sm sm:text-base text-white/80 hover:text-white hover:bg-white/10 w-full sm:w-auto"
                 onClick={handleScrollToServices}
               >
                 Nossos serviços
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </div>
           </div>
 
           {/* Right Video */}
           <div className="hidden lg:flex justify-center items-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-sm lg:max-w-md xl:max-w-lg">
               <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-xl" />
               <video
                 src="/midia_13.mp4"
@@ -114,7 +115,7 @@ export function Hero() {
                 muted
                 playsInline
                 className="relative w-full h-auto rounded-xl shadow-2xl object-cover"
-                style={{ maxHeight: "500px" }}
+                style={{ maxHeight: "450px" }}
               />
             </div>
           </div>
@@ -122,7 +123,7 @@ export function Hero() {
       </div>
 
       {/* Decorative element */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
