@@ -113,7 +113,7 @@ export function Contact() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full gap-2 border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10"
+                  className="w-full gap-2 border-white/30 text-white hover:bg-white/10"
                 >
                   <Instagram className="w-5 h-5" />
                   @gesso.freitas
