@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import contactBg from "@/assets/contact-bg.jpg";
+
 const contactInfo = [
   {
     icon: Phone,
@@ -29,7 +30,7 @@ const contactInfo = [
 
 export function Contact() {
   return (
-    <section id="contato" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="contato" className="py-12 sm:py-16 md:py-20 lg:py-28 relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -37,43 +38,43 @@ export function Contact() {
       >
         <div className="absolute inset-0 bg-muted/95" />
       </div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Fale conosco
           </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-2 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2 mb-3 sm:mb-4">
             Entre em contato
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6" />
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">
             Estamos prontos para atender você. Solicite um orçamento sem compromisso 
             e transforme seu projeto em realidade.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info Cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {contactInfo.map((info, index) => (
               <a
                 key={index}
                 href={info.href}
                 target={info.href?.startsWith("http") ? "_blank" : undefined}
                 rel={info.href?.startsWith("http") ? "noopener noreferrer" : undefined}
-                className={`bg-background p-6 rounded-xl border border-border shadow-custom-sm hover:shadow-custom-md hover:border-primary/30 transition-all ${
+                className={`bg-background p-4 sm:p-5 lg:p-6 rounded-lg sm:rounded-xl border border-border shadow-custom-sm hover:shadow-custom-md hover:border-primary/30 transition-all ${
                   info.href ? "cursor-pointer" : ""
                 }`}
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <info.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                  <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-2">
+                <h3 className="font-heading font-semibold text-base sm:text-lg text-foreground mb-1 sm:mb-2">
                   {info.title}
                 </h3>
                 {info.lines.map((line, idx) => (
-                  <p key={idx} className="text-muted-foreground text-sm">
+                  <p key={idx} className="text-muted-foreground text-xs sm:text-sm">
                     {line}
                   </p>
                 ))}
@@ -82,24 +83,24 @@ export function Contact() {
           </div>
 
           {/* CTA Card */}
-          <div className="bg-secondary rounded-2xl p-8 md:p-12 flex flex-col justify-center">
-            <h3 className="font-heading font-bold text-2xl text-secondary-foreground mb-4">
+          <div className="bg-secondary rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+            <h3 className="font-heading font-bold text-xl sm:text-2xl text-secondary-foreground mb-3 sm:mb-4">
               Solicite seu orçamento
             </h3>
-            <p className="text-secondary-foreground/80 mb-8 leading-relaxed">
+            <p className="text-secondary-foreground/80 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
               Entre em contato pelo WhatsApp e receba um orçamento personalizado 
               para o seu projeto. Atendimento rápido e sem compromisso.
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <a
                 href="https://wa.me/5519991071280"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
               >
-                <Button size="lg" className="w-full gap-2 shadow-primary">
-                  <Phone className="w-5 h-5" />
+                <Button size="lg" className="w-full gap-2 shadow-primary text-sm sm:text-base">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   Chamar no WhatsApp
                 </Button>
               </a>
@@ -113,16 +114,16 @@ export function Contact() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full gap-2 border-white/30 text-white hover:bg-white/10"
+                  className="w-full gap-2 border-white bg-white/20 text-white hover:bg-white hover:text-secondary text-sm sm:text-base"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
                   @gesso.freitas
                 </Button>
               </a>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-secondary-foreground/20">
-              <p className="text-secondary-foreground/70 text-sm">
+            <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-secondary-foreground/20">
+              <p className="text-secondary-foreground/70 text-xs sm:text-sm">
                 <strong className="text-secondary-foreground">CNPJ:</strong> 29.092.317/0001-87
               </p>
             </div>

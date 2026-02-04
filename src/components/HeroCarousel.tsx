@@ -84,7 +84,7 @@ export function HeroCarousel() {
   return (
     <>
       {/* Carousel */}
-      <div className="relative w-full max-w-md">
+      <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
         {/* Glow effect */}
         <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-xl" />
         
@@ -116,7 +116,7 @@ export function HeroCarousel() {
                   />
                   {/* Overlay hint */}
                   <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center">
-                    <span className="text-white text-sm font-medium opacity-0 hover:opacity-100 transition-opacity">
+                    <span className="text-white text-xs sm:text-sm font-medium opacity-0 hover:opacity-100 transition-opacity">
                       Clique para ampliar
                     </span>
                   </div>
@@ -127,15 +127,15 @@ export function HeroCarousel() {
         </Carousel>
 
         {/* Dots indicator */}
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-1.5 sm:gap-2 mt-3 sm:mt-4">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
                 index === currentIndex 
-                  ? "bg-primary w-4" 
-                  : "bg-white/50 hover:bg-white/80"
+                  ? "bg-primary w-3 sm:w-4" 
+                  : "bg-foreground/30 hover:bg-foreground/50"
               }`}
               aria-label={`Ir para imagem ${index + 1}`}
             />
