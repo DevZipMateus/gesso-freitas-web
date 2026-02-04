@@ -1,5 +1,6 @@
-import { ArrowRight, Phone, CheckCircle } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const highlights = [
@@ -78,13 +79,23 @@ export function Hero() {
                 Solicitar orçamento
               </Button>
             </a>
+            <Link to="/vitrine">
+              <Button
+                variant="outline"
+                size="lg"
+                className="gap-2 text-base border-primary/50 text-secondary-foreground bg-primary/10 hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              >
+                <ShoppingBag className="w-5 h-5" />
+                Ver vitrine
+              </Button>
+            </Link>
             <Button
-              variant="outline"
+              variant="ghost"
               size="lg"
-              className="gap-2 text-base border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10"
+              className="gap-2 text-base text-secondary-foreground/80 hover:text-secondary-foreground hover:bg-secondary-foreground/10"
               onClick={handleScrollToServices}
             >
-              Conheça nossos serviços
+              Nossos serviços
               <ArrowRight className="w-5 h-5" />
             </Button>
           </div>
