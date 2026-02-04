@@ -1,6 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 import midia1 from "@/assets/gallery/midia_1.jpg";
 import midia2 from "@/assets/gallery/midia_2.jpg";
@@ -27,18 +34,26 @@ const images = [
 ];
 
 export function HeroCarousel() {
+  const [api, setApi] = useState<CarouselApi>();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Auto-rotate every 3 seconds (does not pause on hover)
+  // Track current slide
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    if (!api) return;
 
-    return () => clearInterval(interval);
-  }, []);
+    const onSelect = () => {
+      setCurrentIndex(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -73,36 +88,50 @@ export function HeroCarousel() {
         {/* Glow effect */}
         <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-xl" />
         
-        {/* Image container */}
-        <div 
-          className="relative overflow-hidden rounded-xl shadow-2xl cursor-pointer aspect-[4/3]"
-          onClick={() => openLightbox(currentIndex)}
+        <Carousel
+          setApi={setApi}
+          opts={{
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+              stopOnInteraction: false,
+              stopOnMouseEnter: false,
+            }),
+          ]}
+          className="relative w-full"
         >
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-          
-          {/* Overlay hint */}
-          <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center">
-            <span className="text-white text-sm font-medium opacity-0 hover:opacity-100 transition-opacity">
-              Clique para ampliar
-            </span>
-          </div>
-        </div>
+          <CarouselContent className="-ml-4">
+            {images.map((image, index) => (
+              <CarouselItem key={index} className="pl-4">
+                <div 
+                  className="relative overflow-hidden rounded-xl shadow-2xl cursor-pointer aspect-[4/3]"
+                  onClick={() => openLightbox(index)}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay hint */}
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <span className="text-white text-sm font-medium opacity-0 hover:opacity-100 transition-opacity">
+                      Clique para ampliar
+                    </span>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
         {/* Dots indicator */}
         <div className="flex justify-center gap-2 mt-4">
           {images.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => api?.scrollTo(index)}
               className={`w-2 h-2 rounded-full transition-all ${
                 index === currentIndex 
                   ? "bg-primary w-4" 
