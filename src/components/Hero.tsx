@@ -85,7 +85,7 @@ export function Hero() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="gap-2 text-base border-primary/50 text-secondary-foreground bg-primary/10 hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                  className="gap-2 text-base border-white/50 text-white bg-white/10 hover:bg-primary hover:text-white hover:border-primary"
                 >
                   <ShoppingBag className="w-5 h-5" />
                   Ver vitrine
@@ -94,7 +94,7 @@ export function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="gap-2 text-base text-secondary-foreground/80 hover:text-secondary-foreground hover:bg-secondary-foreground/10"
+                className="gap-2 text-base text-white/80 hover:text-white hover:bg-white/10"
                 onClick={handleScrollToServices}
               >
                 Nossos serviços
