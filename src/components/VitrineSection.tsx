@@ -76,7 +76,7 @@ export function VitrineSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="gap-2 border-white/30 text-white hover:bg-white/10 w-full sm:w-auto"
+                  className="gap-2 border-white bg-white/20 text-white hover:bg-white hover:text-secondary w-full sm:w-auto"
                 >
                   <ExternalLink className="w-5 h-5" />
                   Tirar dúvidas
