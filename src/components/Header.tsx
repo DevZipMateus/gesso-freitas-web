@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#produtos", label: "Produtos" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#inicio", label: "Início" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#produtos", label: "Produtos" },
+  { href: "/#contato", label: "Contato" },
+  { href: "/vitrine", label: "Vitrine" },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,47 +26,63 @@ export function Header() {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    // Se estiver na home e for um link de âncora
+    if (location.pathname === "/" && href.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = href.replace("/#", "#");
+      const element = document.querySelector(targetId);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      }
     }
     setIsOpen(false);
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-custom-md"
           : "bg-background/90 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 h-full">
+        <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <a href="#inicio" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <img
               src="/logo.png"
               alt="Gesso Freitas Campinas"
               className="h-14 w-auto"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm uppercase tracking-wide"
-              >
-                {link.label}
-              </a>
+              link.href.startsWith("/") && !link.href.includes("#") ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`text-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm uppercase tracking-wide ${
+                    location.pathname === link.href ? "text-primary" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm uppercase tracking-wide"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </nav>
 
@@ -93,20 +112,33 @@ export function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          className={`lg:hidden overflow-hidden transition-all duration-300 bg-background ${
             isOpen ? "max-h-96 pb-6" : "max-h-0"
           }`}
         >
           <nav className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 py-2"
-              >
-                {link.label}
-              </a>
+              link.href.startsWith("/") && !link.href.includes("#") ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-foreground/80 hover:text-primary font-medium transition-colors duration-200 py-2 ${
+                    location.pathname === link.href ? "text-primary" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 py-2"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
             <a
               href="https://wa.me/5519991071280"
