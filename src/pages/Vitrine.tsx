@@ -7,10 +7,21 @@ const Vitrine = () => {
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
+    // Esconde o badge do MonteSite na página Vitrine
+    const badge = document.getElementById("montesite-footer-badge");
+    if (badge) {
+      badge.style.display = "none";
+    }
+
     return () => {
       // Restaura o scroll ao sair da página
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
+      
+      // Restaura o badge do MonteSite
+      if (badge) {
+        badge.style.display = "";
+      }
     };
   }, []);
 
@@ -22,7 +33,7 @@ const Vitrine = () => {
       {/* Iframe - ocupa o espaço restante */}
       <main 
         className="flex-1 w-full pt-20"
-        style={{ height: "calc(100vh - 80px - 63px)" }}
+        style={{ height: "calc(100vh - 80px)" }}
       >
         <iframe
           src="https://gessofreitasccgmailcom.egestor.com.br/vitrine/"
