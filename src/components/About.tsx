@@ -1,4 +1,5 @@
 import { Building2, Users, Award, Target } from "lucide-react";
+import aboutBg from "@/assets/about-bg.jpg";
 
 const stats = [
   { icon: Building2, value: "18+", label: "Anos de experiência" },
@@ -9,8 +10,15 @@ const stats = [
 
 export function About() {
   return (
-    <section id="sobre" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="sobre" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${aboutBg})` }}
+      >
+        <div className="absolute inset-0 bg-background/95" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">

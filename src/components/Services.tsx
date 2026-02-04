@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import servicesBg from "@/assets/services-bg.jpg";
+
 const services = [
   {
     icon: Layers,
@@ -49,8 +51,15 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicos" className="py-20 md:py-28 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="servicos" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${servicesBg})` }}
+      >
+        <div className="absolute inset-0 bg-muted/95" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
