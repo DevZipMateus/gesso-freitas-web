@@ -1,5 +1,5 @@
 import { CheckCircle } from "lucide-react";
-
+import productsBg from "@/assets/products-bg.jpg";
 const productCategories = [
   {
     title: "Placas de drywall",
@@ -41,8 +41,15 @@ const productCategories = [
 
 export function Products() {
   return (
-    <section id="produtos" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="produtos" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${productsBg})` }}
+      >
+        <div className="absolute inset-0 bg-background/95" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
