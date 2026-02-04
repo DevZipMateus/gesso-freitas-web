@@ -1,5 +1,6 @@
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const highlights = [
   "Mais de 18 anos de experiência",
@@ -8,9 +9,9 @@ const highlights = [
 ];
 
 export function Hero() {
-  const handleScrollToContact = (e: React.MouseEvent) => {
+  const handleScrollToServices = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.querySelector("#contato");
+    const element = document.querySelector("#servicos");
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -22,13 +23,15 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center bg-gradient-hero pt-20"
+      className="relative min-h-screen flex items-center pt-20"
     >
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -79,7 +82,7 @@ export function Hero() {
               variant="outline"
               size="lg"
               className="gap-2 text-base border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10"
-              onClick={handleScrollToContact}
+              onClick={handleScrollToServices}
             >
               Conheça nossos serviços
               <ArrowRight className="w-5 h-5" />
