@@ -36,7 +36,7 @@ export function Contact() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${contactBg})` }}
       >
-        <div className="absolute inset-0 bg-muted/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/95 via-secondary/90 to-secondary/95" />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -44,11 +44,11 @@ export function Contact() {
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Fale conosco
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2 mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-secondary-foreground mt-2 mb-3 sm:mb-4">
             Entre em contato
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6" />
-          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">
+          <p className="text-secondary-foreground/70 text-sm sm:text-base max-w-2xl mx-auto px-4">
             Estamos prontos para atender você. Solicite um orçamento sem compromisso 
             e transforme seu projeto em realidade.
           </p>
@@ -63,18 +63,18 @@ export function Contact() {
                 href={info.href}
                 target={info.href?.startsWith("http") ? "_blank" : undefined}
                 rel={info.href?.startsWith("http") ? "noopener noreferrer" : undefined}
-                className={`bg-background p-4 sm:p-5 lg:p-6 rounded-lg sm:rounded-xl border border-border shadow-custom-sm hover:shadow-custom-md hover:border-primary/30 transition-all ${
+                className={`bg-white/5 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-lg sm:rounded-xl border border-white/10 hover:border-primary/30 transition-all ${
                   info.href ? "cursor-pointer" : ""
                 }`}
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                   <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="font-heading font-semibold text-base sm:text-lg text-foreground mb-1 sm:mb-2">
+                <h3 className="font-heading font-semibold text-base sm:text-lg text-secondary-foreground mb-1 sm:mb-2">
                   {info.title}
                 </h3>
                 {info.lines.map((line, idx) => (
-                  <p key={idx} className="text-muted-foreground text-xs sm:text-sm">
+                  <p key={idx} className="text-secondary-foreground/70 text-xs sm:text-sm">
                     {line}
                   </p>
                 ))}
@@ -83,7 +83,7 @@ export function Contact() {
           </div>
 
           {/* CTA Card */}
-          <div className="bg-secondary rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center border border-white/10">
             <h3 className="font-heading font-bold text-xl sm:text-2xl text-secondary-foreground mb-3 sm:mb-4">
               Solicite seu orçamento
             </h3>

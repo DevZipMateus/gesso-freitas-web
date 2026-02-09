@@ -54,7 +54,7 @@ export function ServiceCarousel({ title, images }: ServiceCarouselProps) {
 
   return (
     <div className="flex flex-col items-center">
-      <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-foreground mb-4 sm:mb-6">
+      <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-secondary-foreground mb-4 sm:mb-6">
         {title}
       </h3>
 
