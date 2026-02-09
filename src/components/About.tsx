@@ -1,11 +1,24 @@
-import { Building2, Users, Award, Target } from "lucide-react";
+import { Building2, Award, Target, Star } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 
 const stats = [
   { icon: Building2, value: "18+", label: "Anos de experiência" },
-  { icon: Users, value: "20+", label: "Colaboradores diretos" },
-  { icon: Award, value: "1000+", label: "Projetos entregues" },
+  { icon: Award, value: "10.000+", label: "Projetos entregues" },
+  { icon: Star, value: "100%", label: "Profissionais altamente qualificados" },
   { icon: Target, value: "100%", label: "Comprometimento" },
+];
+
+const parceiros = [
+  "Palmeiras F.C",
+  "Construtora PR2",
+  "Construtora BCS",
+  "Construtora ASO",
+  "Mercado Livre",
+  "Construtora Winners",
+  "Hotel Bourbon",
+  "Shopping Miramar",
+  "Shopping Serramar",
+  "Shopping Mall Swiss Park",
 ];
 
 export function About() {
@@ -44,9 +57,9 @@ export function About() {
               <strong className="text-foreground"> qualidade, compromisso e excelência</strong>.
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-              Hoje, a Gesso Freitas Campinas conta com mais de <strong className="text-foreground">20 
-              colaboradores diretos</strong> e cerca de 15 indiretos, reforçando sua estrutura e capacidade 
-              para atender projetos com eficiência, profissionalismo e credibilidade.
+              Hoje, a Gesso Freitas Campinas conta com profissionais altamente qualificados, 
+              reforçando sua estrutura e capacidade para atender projetos com eficiência, 
+              profissionalismo e credibilidade.
             </p>
           </div>
 
@@ -111,6 +124,25 @@ export function About() {
               <div className="text-muted-foreground text-xs sm:text-sm">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        {/* Parceiros */}
+        <div className="mt-12 sm:mt-16 md:mt-20 bg-secondary rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-12">
+          <h3 className="font-heading font-bold text-xl sm:text-2xl text-secondary-foreground text-center mb-6 sm:mb-8">
+            Nossos parceiros
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+            {parceiros.map((parceiro, index) => (
+              <div
+                key={index}
+                className="bg-secondary-foreground/10 rounded-lg p-3 sm:p-4 text-center hover:bg-secondary-foreground/20 transition-colors"
+              >
+                <span className="text-secondary-foreground text-xs sm:text-sm font-medium">
+                  {parceiro}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

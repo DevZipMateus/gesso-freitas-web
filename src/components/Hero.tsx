@@ -1,6 +1,5 @@
-import { ArrowRight, Phone, CheckCircle, ShoppingBag } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const highlights = [
@@ -82,16 +81,6 @@ export function Hero() {
                   Solicitar orçamento
                 </Button>
               </a>
-              <Link to="/vitrine" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="gap-2 text-sm sm:text-base border-white/50 text-white bg-white/10 hover:bg-primary hover:text-white hover:border-primary w-full sm:w-auto"
-                >
-                  <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Ver vitrine
-                </Button>
-              </Link>
               <Button
                 variant="ghost"
                 size="lg"
