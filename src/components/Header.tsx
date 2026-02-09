@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/#servicos", label: "Serviços" },
   { href: "/#produtos", label: "Produtos" },
   { href: "/#contato", label: "Contato" },
-  { href: "/vitrine", label: "Vitrine" },
 ];
 
 export function Header() {
@@ -45,8 +44,8 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-20 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-custom-md"
-          : "bg-background/90 backdrop-blur-sm"
+          ? "bg-secondary/95 backdrop-blur-md shadow-custom-md"
+          : "bg-secondary/90 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4 h-full">
@@ -67,7 +66,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm uppercase tracking-wide ${
+                  className={`text-secondary-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm uppercase tracking-wide ${
                     location.pathname === link.href ? "text-primary" : ""
                   }`}
                 >
@@ -78,7 +77,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm uppercase tracking-wide"
+                  className="text-secondary-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm uppercase tracking-wide"
                 >
                   {link.label}
                 </a>
@@ -103,7 +102,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-secondary-foreground"
             aria-label="Menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -112,7 +111,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 bg-background ${
+          className={`lg:hidden overflow-hidden transition-all duration-300 bg-secondary ${
             isOpen ? "max-h-96 pb-6" : "max-h-0"
           }`}
         >
@@ -123,7 +122,7 @@ export function Header() {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-foreground/80 hover:text-primary font-medium transition-colors duration-200 py-2 ${
+                  className={`text-secondary-foreground/80 hover:text-primary font-medium transition-colors duration-200 py-2 ${
                     location.pathname === link.href ? "text-primary" : ""
                   }`}
                 >
@@ -134,7 +133,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 py-2"
+                  className="text-secondary-foreground/80 hover:text-primary font-medium transition-colors duration-200 py-2"
                 >
                   {link.label}
                 </a>
