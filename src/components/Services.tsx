@@ -107,7 +107,7 @@ export function Services() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${servicesBg})` }}
       >
-        <div className="absolute inset-0 bg-muted/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/95 via-secondary/90 to-secondary/95" />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -115,11 +115,11 @@ export function Services() {
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             O que fazemos
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2 mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-secondary-foreground mt-2 mb-3 sm:mb-4">
             Nossos serviços
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6" />
-          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">
+          <p className="text-secondary-foreground/70 text-sm sm:text-base max-w-2xl mx-auto px-4">
             Oferecemos soluções completas em gesso e drywall, com qualidade e 
             profissionalismo para transformar qualquer ambiente.
           </p>
@@ -142,23 +142,23 @@ export function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-background p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-border shadow-custom-sm hover:shadow-custom-md transition-all duration-300 group"
+              className="bg-white/5 backdrop-blur-sm p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-white/10 hover:border-primary/30 transition-all duration-300 group"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                 <service.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               
-              <h3 className="font-heading font-semibold text-base sm:text-lg lg:text-xl text-foreground mb-2 sm:mb-3">
+              <h3 className="font-heading font-semibold text-base sm:text-lg lg:text-xl text-secondary-foreground mb-2 sm:mb-3">
                 {service.title}
               </h3>
               
-              <p className="text-muted-foreground text-sm mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-secondary-foreground/70 text-sm mb-4 sm:mb-6 leading-relaxed">
                 {service.description}
               </p>
               
               <ul className="space-y-1.5 sm:space-y-2">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                  <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-secondary-foreground/70">
                     <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
                     {feature}
                   </li>

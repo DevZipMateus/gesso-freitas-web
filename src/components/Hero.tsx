@@ -112,7 +112,7 @@ export function Hero() {
       </div>
 
       {/* Decorative element */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-gradient-to-t from-secondary to-transparent" />
     </section>
   );
 }

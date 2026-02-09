@@ -29,7 +29,7 @@ export function About() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${aboutBg})` }}
       >
-        <div className="absolute inset-0 bg-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/95 via-secondary/90 to-secondary/95" />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -37,7 +37,7 @@ export function About() {
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Sobre nós
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2 mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-secondary-foreground mt-2 mb-3 sm:mb-4">
             Nossa história
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-primary mx-auto rounded-full" />
@@ -46,17 +46,17 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="space-y-4 sm:space-y-6">
-            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-              Fundada em 2005, a <strong className="text-foreground">Gesso Freitas Campinas</strong> nasceu 
+            <p className="text-sm sm:text-base lg:text-lg text-secondary-foreground/70 leading-relaxed">
+              Fundada em 2005, a <strong className="text-secondary-foreground">Gesso Freitas Campinas</strong> nasceu 
               da determinação de Emerson Freitas, que iniciou sua carreira como ajudante e, com paixão pelo 
               que faz, buscou constante aprendizado e qualificação, incluindo cursos na área de Steel Frame.
             </p>
-            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-secondary-foreground/70 leading-relaxed">
               Com crescimento sólido ao longo dos anos e reconhecimento vindo principalmente por meio de 
               indicações de clientes satisfeitos, a empresa construiu uma trajetória marcada pela 
-              <strong className="text-foreground"> qualidade, compromisso e excelência</strong>.
+              <strong className="text-secondary-foreground"> qualidade, compromisso e excelência</strong>.
             </p>
-            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-secondary-foreground/70 leading-relaxed">
               Hoje, a Gesso Freitas Campinas conta com profissionais altamente qualificados, 
               reforçando sua estrutura e capacidade para atender projetos com eficiência, 
               profissionalismo e credibilidade.
@@ -65,29 +65,29 @@ export function About() {
 
           {/* Values Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <div className="bg-muted/50 p-4 sm:p-6 rounded-xl border border-border">
+            <div className="bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-white/10">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                 <Target className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
-              <h3 className="font-heading font-semibold text-base sm:text-lg text-foreground mb-2">Missão</h3>
-              <p className="text-muted-foreground text-xs sm:text-sm">
+              <h3 className="font-heading font-semibold text-base sm:text-lg text-secondary-foreground mb-2">Missão</h3>
+              <p className="text-secondary-foreground/70 text-xs sm:text-sm">
                 Oferecer serviços e produtos em gesso com alto padrão de qualidade, transformando 
                 projetos em ambientes funcionais, modernos e duráveis.
               </p>
             </div>
 
-            <div className="bg-muted/50 p-4 sm:p-6 rounded-xl border border-border">
+            <div className="bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-white/10">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                 <Award className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
-              <h3 className="font-heading font-semibold text-base sm:text-lg text-foreground mb-2">Visão</h3>
-              <p className="text-muted-foreground text-xs sm:text-sm">
+              <h3 className="font-heading font-semibold text-base sm:text-lg text-secondary-foreground mb-2">Visão</h3>
+              <p className="text-secondary-foreground/70 text-xs sm:text-sm">
                 Ser referência em soluções em gesso e acabamentos, reconhecida pela qualidade, 
                 inovação e confiança no mercado da construção civil.
               </p>
             </div>
 
-            <div className="sm:col-span-2 bg-secondary p-4 sm:p-6 rounded-xl">
+            <div className="sm:col-span-2 bg-white/5 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-white/10">
               <h3 className="font-heading font-semibold text-base sm:text-lg text-secondary-foreground mb-3 sm:mb-4">
                 Nossos valores
               </h3>
@@ -109,7 +109,7 @@ export function About() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-12 md:mt-16 pt-10 sm:pt-12 md:pt-16 border-t border-border">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-12 md:mt-16 pt-10 sm:pt-12 md:pt-16 border-t border-white/10">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -118,16 +118,16 @@ export function About() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors">
                 <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary" />
               </div>
-              <div className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-1">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-secondary-foreground mb-1">
                 {stat.value}
               </div>
-              <div className="text-muted-foreground text-xs sm:text-sm">{stat.label}</div>
+              <div className="text-secondary-foreground/70 text-xs sm:text-sm">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Parceiros */}
-        <div className="mt-12 sm:mt-16 md:mt-20 bg-secondary rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-12">
+        <div className="mt-12 sm:mt-16 md:mt-20 bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-12 border border-white/10">
           <h3 className="font-heading font-bold text-xl sm:text-2xl text-secondary-foreground text-center mb-6 sm:mb-8">
             Nossos parceiros
           </h3>
