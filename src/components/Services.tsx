@@ -131,7 +131,7 @@ export function Services() {
         </div>
 
         {/* Category Carousels */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12 md:mb-16">
+        <div className="flex flex-col gap-10 sm:gap-12 md:gap-16 mb-10 sm:mb-12 md:mb-16">
           <ServiceCarousel title="Forro" images={forroImages} />
           <ServiceCarousel title="Sanca" images={sancaImages} />
           <ServiceCarousel title="Steel Frame" images={steelFrameImages} />
