@@ -65,13 +65,13 @@ const services = [
     icon: Layers,
     title: "Drywall",
     description: "Paredes e divisórias, forros, rebaixamento de teto, sancas e soluções acústicas e termoacústicas.",
-    features: ["Paredes e divisórias", "Forros de drywall", "Soluções acústicas", "Resistente à umidade"],
+    features: ["Paredes e divisórias", "Forros de drywall", "Soluções acústicas", "Resistente à umidade", "Resistente a fogo"],
   },
   {
     icon: Home,
     title: "Gesso convencional",
     description: "Forro de gesso tradicional, molduras, sancas decorativas e detalhes personalizados.",
-    features: ["Forro de gesso", "Molduras e sancas", "Detalhes decorativos", "Acabamentos finos"],
+    features: ["Forro de gesso", "Molduras e sancas", "Detalhes decorativos", "Acabamentos finos", "Forro modular", "Forro vinílico"],
   },
   {
     icon: Paintbrush,
@@ -94,8 +94,8 @@ const services = [
   {
     icon: LayoutGrid,
     title: "Projetos especiais",
-    description: "Reforços estruturais, áreas técnicas, drywall RF (resistente ao fogo) e projetos comerciais.",
-    features: ["Reforços estruturais", "Áreas técnicas", "Drywall RF", "Projetos comerciais"],
+    description: "Reforços estruturais, áreas técnicas, Steel Frame e projetos comerciais.",
+    features: ["Reforços estruturais", "Áreas técnicas", "Steel Frame", "Projetos comerciais"],
   },
 ];
 
