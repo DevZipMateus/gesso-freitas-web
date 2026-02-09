@@ -8,7 +8,57 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { ServiceCarousel } from "@/components/ServiceCarousel";
 import servicesBg from "@/assets/services-bg.jpg";
+
+const forroImages = [
+  { src: "/forro/1228765882682513.jpeg", alt: "Forro de gesso - Projeto 1" },
+  { src: "/forro/1229988595184720.jpeg", alt: "Forro de gesso - Projeto 2" },
+  { src: "/forro/1401182864720403.jpeg", alt: "Forro de gesso - Projeto 3" },
+  { src: "/forro/1451169296633361.jpeg", alt: "Forro de gesso - Projeto 4" },
+  { src: "/forro/1561022678533452.jpeg", alt: "Forro de gesso - Projeto 5" },
+  { src: "/forro/1620213679000025.jpeg", alt: "Forro de gesso - Projeto 6" },
+  { src: "/forro/1648478576140750.jpeg", alt: "Forro de gesso - Projeto 7" },
+  { src: "/forro/2435548803561781.jpeg", alt: "Forro de gesso - Projeto 8" },
+  { src: "/forro/2913627352301665.jpeg", alt: "Forro de gesso - Projeto 9" },
+  { src: "/forro/869285392547001.jpeg", alt: "Forro de gesso - Projeto 10" },
+  { src: "/forro/910839727970666.jpeg", alt: "Forro de gesso - Projeto 11" },
+  { src: "/forro/917895993935501.jpeg", alt: "Forro de gesso - Projeto 12" },
+];
+
+const sancaImages = [
+  { src: "/sanca/1227419435488339.jpeg", alt: "Sanca - Projeto 1" },
+  { src: "/sanca/1579236046739315.jpeg", alt: "Sanca - Projeto 2" },
+  { src: "/sanca/1661878971857648.jpeg", alt: "Sanca - Projeto 3" },
+  { src: "/sanca/852655874477956.jpeg", alt: "Sanca - Projeto 4" },
+  { src: "/sanca/916675867527340.jpeg", alt: "Sanca - Projeto 5" },
+  { src: "/sanca/931757112618841.jpeg", alt: "Sanca - Projeto 6" },
+];
+
+const steelFrameImages = [
+  { src: "/steel-frame/1182434293668086.jpeg", alt: "Steel Frame - Projeto 1" },
+  { src: "/steel-frame/1198007098987867.jpeg", alt: "Steel Frame - Projeto 2" },
+  { src: "/steel-frame/1258422829480061.jpeg", alt: "Steel Frame - Projeto 3" },
+  { src: "/steel-frame/1404111584375505.jpeg", alt: "Steel Frame - Projeto 4" },
+  { src: "/steel-frame/1417714599795053.jpeg", alt: "Steel Frame - Projeto 5" },
+  { src: "/steel-frame/1442477610997805.jpeg", alt: "Steel Frame - Projeto 6" },
+  { src: "/steel-frame/1484513229836733.jpeg", alt: "Steel Frame - Projeto 7" },
+  { src: "/steel-frame/1556807775751894.jpeg", alt: "Steel Frame - Projeto 8" },
+  { src: "/steel-frame/1602538787625034.jpeg", alt: "Steel Frame - Projeto 9" },
+  { src: "/steel-frame/1630993914914462.jpeg", alt: "Steel Frame - Projeto 10" },
+  { src: "/steel-frame/1940664904000376.jpeg", alt: "Steel Frame - Projeto 11" },
+  { src: "/steel-frame/1954547885944132.jpeg", alt: "Steel Frame - Projeto 12" },
+  { src: "/steel-frame/1971489483580834.jpeg", alt: "Steel Frame - Projeto 13" },
+  { src: "/steel-frame/2119014502241280.jpeg", alt: "Steel Frame - Projeto 14" },
+  { src: "/steel-frame/2187404075334750.jpeg", alt: "Steel Frame - Projeto 15" },
+  { src: "/steel-frame/2349600565467849.jpeg", alt: "Steel Frame - Projeto 16" },
+  { src: "/steel-frame/2420819668388366.jpeg", alt: "Steel Frame - Projeto 17" },
+  { src: "/steel-frame/4201869983409559.jpeg", alt: "Steel Frame - Projeto 18" },
+  { src: "/steel-frame/742700895581726.jpeg", alt: "Steel Frame - Projeto 19" },
+  { src: "/steel-frame/862187483321714.jpeg", alt: "Steel Frame - Projeto 20" },
+  { src: "/steel-frame/895805849480107.jpeg", alt: "Steel Frame - Projeto 21" },
+  { src: "/steel-frame/917556097462627.jpeg", alt: "Steel Frame - Projeto 22" },
+];
 
 const services = [
   {
@@ -78,6 +128,13 @@ export function Services() {
         {/* Carousel Section */}
         <div className="flex justify-center mb-10 sm:mb-12 md:mb-16 px-4">
           <HeroCarousel />
+        </div>
+
+        {/* Category Carousels */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12 md:mb-16">
+          <ServiceCarousel title="Forro" images={forroImages} />
+          <ServiceCarousel title="Sanca" images={sancaImages} />
+          <ServiceCarousel title="Steel Frame" images={steelFrameImages} />
         </div>
 
         {/* Services Grid */}
